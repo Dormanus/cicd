@@ -19,3 +19,5 @@ steps:
     dir: nodejs/src
     entrypoint: npm
     args: ["run test"]
+  - name: 'docker'
+    args: ['build', '-t', 'gcr.io/My\ First\ Project/myimage', '.']
