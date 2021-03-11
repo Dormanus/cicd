@@ -6,10 +6,12 @@ steps:
     dir: nodejs
     entrypoint: npm
     args: ["install"]
+    waitFor: ['-']
   - name: node:latest
     dir: nodejs
     entrypoint: npm
     args: ["build"]
+    waitFor: ['-']
   - name: maven:latest
     entrypoint: mvn
     args: ["test"]
