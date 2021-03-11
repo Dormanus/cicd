@@ -2,8 +2,9 @@ steps:
   - name: maven:latest
     entrypoint: mvn
     args: ["test"]
-
-steps:
+  - name: nod:latest
+    entrypoint: npm
+    args: ["test"]
   - name: maven:latest
     entrypoint: mvn
     args: ["package", "-Dmaven.test.skip=true"]
