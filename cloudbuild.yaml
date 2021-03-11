@@ -1,16 +1,4 @@
-cache:
-  paths:
-    - .m2/repository
-    - target 
-    - node_module
-
-stages: 
-  - compile
-  - test
-  - dockerize
-
-compile-java:
-  image: maven:latest
-  stage: compile
-  script: 
-    - mvn clean install -DskipTest
+steps:
+  - name: maven:latest
+    entrypoint: mvn
+    args: ["test"]
