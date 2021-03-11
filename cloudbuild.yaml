@@ -1,10 +1,11 @@
 steps:
   - name: maven:latest
     entrypoint: mvn
-    args: ["test"]
-  - name: nod:latest
-    entrypoint: npm
-    args: ["test"]
+    args: ["package", "-Dmaven.test.skip=true"]
   - name: maven:latest
     entrypoint: mvn
-    args: ["package", "-Dmaven.test.skip=true"]
+    args: ["test"]
+  - name: node:latest
+    dir: nodejs/src
+    entrypoint: npm
+    args: ["test"]
