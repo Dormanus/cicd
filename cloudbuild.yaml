@@ -5,12 +5,12 @@ steps:
   - name: node:latest
     dir: nodejs
     entrypoint: npm
-    args: ["install", "--cache-from", "nodejs/node_modules/"]
+    args: ["install", "--cache-from", "node_modules/"]
     waitFor: ['-']
   - name: node:latest
     dir: nodejs
     entrypoint: npm
-    args: ["build", "--cache-from", "nodejs/node_modules/"]
+    args: ["build", "--cache-from", "node_modules/"]
     waitFor: ['-']
   - name: maven:latest
     entrypoint: mvn
