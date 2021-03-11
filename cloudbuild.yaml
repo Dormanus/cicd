@@ -10,7 +10,6 @@ steps:
     dir: nodejs/src
     entrypoint: npm
     args: ["run", "build"]
-    waitFor: ['-']
   - name: maven:latest
     entrypoint: mvn
     args: ["test"]
@@ -18,4 +17,3 @@ steps:
     dir: nodejs/src
     entrypoint: npm
     args: ["run test"]
-    waitFor: ['-']
