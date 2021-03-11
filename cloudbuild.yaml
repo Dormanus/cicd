@@ -9,7 +9,7 @@ steps:
   - name: node:latest
     dir: nodejs
     entrypoint: npm
-    args: ["run", "build"]
+    args: ["build"]
   - name: maven:latest
     entrypoint: mvn
     args: ["test"]
