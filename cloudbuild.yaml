@@ -8,7 +8,7 @@ steps:
   - name: node:latest
     dir: nodejs/src
     entrypoint: npm
-    args: ["i", "npm run build"]
+    args: ["i", "run build"]
   - name: node:latest
     dir: nodejs/src
     entrypoint: npm
