@@ -2,14 +2,20 @@ steps:
   - name: maven:latest
     entrypoint: mvn
     args: ["package", "-Dmaven.test.skip=true"]
+  - name: node:latest
+    dir: nodejs/src
+    entrypoint: npm
+    args: ["install"]
+  - name: node:latest
+    dir: nodejs/src
+    entrypoint: npm
+    args: ["run", "build"]
+    waitFor: ['-']
   - name: maven:latest
     entrypoint: mvn
     args: ["test"]
   - name: node:latest
     dir: nodejs/src
     entrypoint: npm
-    args: ["i", "run build"]
-  - name: node:latest
-    dir: nodejs/src
-    entrypoint: npm
     args: ["run test"]
+    waitFor: ['-']
